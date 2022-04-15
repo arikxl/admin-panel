@@ -51,19 +51,19 @@ const Login = () => {
   window.scrollTo(0, 0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const location = useLocation();
-  const redirect = location.search ? location.search.split("=")[1] : "/";
+  // const location = useLocation();
+  // const redirect = location.search ? location.search.split("=")[1] : "/";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const user = useSelector((state) => state.userLogin);
-  console.log('user:', user)
   const { error, loading, userInfo } = user;
+  console.log('userInfo:', userInfo)
 
   useEffect(() => {
-    if (userInfo) navigate(redirect)
-  }, [userInfo, navigate, redirect]);
+    if (userInfo && userInfo.isAdmin) navigate(`/homepage`)
+  }, [userInfo, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,12 +72,13 @@ const Login = () => {
 
   return (
     <LoginStyled>
-      <Link to={'/'}>
+      <a href={'http://localhost:3000/'}>
         <button>🏠</button>
-      </Link>
+      </a>
 
       {error && <Error message={error}/>}
       {loading && <Loader />}
+      {userInfo && !userInfo?.isAdmin && <Error message='You are not admin!'/>}
 
       <form onSubmit={handleSubmit} >
         <input type="email" placeholder='Email' name="email"
@@ -88,15 +89,6 @@ const Login = () => {
         <br />
         <button>LOGIN</button>
       </form>
-
-
-      <p>
-        <Link to={redirect
-          ? `/register?redirect=${redirect}`
-          : "/register"}>
-          Create a new account
-        </Link>
-      </p>
     </LoginStyled>
   )
 }
