@@ -4,9 +4,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 
 
-// import Error from '../components/Loaders/Error';
-// import Loader from '../components/Loaders/Loader/Loader';
 import { login } from '../../redux/actions/userActions';
+import Error from '../Loaders/Error';
+import Loader from '../Loaders/Loader/Loader';
 
 const LoginStyled = styled.main`
   height:80vh ;
@@ -58,6 +58,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const user = useSelector((state) => state.userLogin);
+  console.log('user:', user)
   const { error, loading, userInfo } = user;
 
   useEffect(() => {
@@ -75,8 +76,8 @@ const Login = () => {
         <button>🏠</button>
       </Link>
 
-      {/* {error && <Error message={error}/>} */}
-      {/* {loading && <Loader />} */}
+      {error && <Error message={error}/>}
+      {loading && <Loader />}
 
       <form onSubmit={handleSubmit} >
         <input type="email" placeholder='Email' name="email"
