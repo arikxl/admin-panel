@@ -18,12 +18,12 @@ export const login = (email, password) => async (dispatch) => {
         }
         
         const {data} = await axios.post(`/users/login`,
-        {email, password}, config);
-
+        {email, password},
+        config,
+        );
 
         dispatch({type : USER_LOGIN_SUCCESS, payload : data});
         localStorage.setItem('userInfo', JSON.stringify(data));
-
     } catch (error) {
             dispatch({
                 type: USER_LOGIN_FAIL,
