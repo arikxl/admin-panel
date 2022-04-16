@@ -15,10 +15,10 @@ import CategoriesPage from "./pages/categories-page/CategoriesPage";
 function App() {
   return (
     <BrowserRouter>
+          <AppHeader />
       <div className="flex">
         <AppSidebar />
         <div className="flex column">
-          <AppHeader />
           <hr />
         <Routes>
           <Route path="/" element={<Login />}/>
