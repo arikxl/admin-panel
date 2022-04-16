@@ -2,13 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
-
 const SidebarStyled = styled.nav`
   width:100% ;
   height: 100vh;
   border: 2px solid chocolate ;
-
 `;
 
 const AppSidebar = () => {
@@ -43,7 +40,7 @@ const AppSidebar = () => {
         </Link>
       </SidebarStyled>
     </div>
-  )
-}
+  );
+};
 
-export default AppSidebar
+export default AppSidebar;

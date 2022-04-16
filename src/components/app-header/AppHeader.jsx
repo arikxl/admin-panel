@@ -2,19 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const AppHeader = () => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userLogin).userInfo;
 
-
   const submitLogout = () => {
     dispatch(logout())
   }
-
 
   return (
     < div className='flex space-between'>
@@ -26,7 +24,7 @@ const AppHeader = () => {
         </Link>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default AppHeader
+export default AppHeader;

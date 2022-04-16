@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
-
 
 import { login } from '../../redux/actions/userActions';
 import Error from '../Loaders/Error';
@@ -51,15 +50,12 @@ const Login = () => {
   window.scrollTo(0, 0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const location = useLocation();
-  // const redirect = location.search ? location.search.split("=")[1] : "/";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const user = useSelector((state) => state.userLogin);
   const { error, loading, userInfo } = user;
-  console.log('userInfo:', userInfo)
 
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) navigate(`/homepage`)
@@ -90,7 +86,7 @@ const Login = () => {
         <button>LOGIN</button>
       </form>
     </LoginStyled>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
