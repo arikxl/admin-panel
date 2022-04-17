@@ -3,13 +3,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 import { userListReducer, userLoginReducer } from './reducers/userReducers';
-import { productListReducer } from './reducers/productReducers';
+import { productDeleteReducer, productListReducer } from './reducers/productReducers';
 
 
 const reducer = combineReducers({
     userLogin : userLoginReducer, 
     userList: userListReducer,
     productList: productListReducer,
+    productDelete: productDeleteReducer,
+    
 });
 
 // LOGIN
