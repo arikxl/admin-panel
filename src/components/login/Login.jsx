@@ -21,11 +21,11 @@ const LoginStyled = styled.main`
 
     input {
       padding: 5px ;
-      border: 1px solid hotpink ;
+      border: 1px solid chocolate ;
     }
 
     button {
-      background-color: hotpink ;
+      background-color: chocolate ;
       font-size: 16px ;
       padding: 5px ;
       color: white ;
@@ -39,7 +39,7 @@ const LoginStyled = styled.main`
   button:first-child{
     margin-top: 20px ;
     padding:  5px;
-    border: 3px double hotpink ;
+    border: 3px double chocolate ;
     background-color: transparent ;
     border-radius: 5px ;
   }

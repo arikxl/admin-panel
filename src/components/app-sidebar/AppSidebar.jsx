@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const SidebarStyled = styled.nav`
-  width:100% ;
+  width:20vw ;
   height: 100vh;
   border: 2px solid chocolate ;
+  border-top:none ;
 `;
 
 const AppSidebar = () => {
