@@ -29,14 +29,15 @@ const Products = () => {
 
   return (
     <div>
+      <Link to={'/addProduct'}>
+        <button style={{ padding: 10, color: 'chocolate' }}>CREATE A NEW PRODUCT</button>
+      </Link>
+      <h1>products:</h1>
       {errorDelete && (<Error message={errorDelete} />)}
       {loading ? <Loader /> : error ? <Error message={error} />
         : (
           <>
-            <Link to={'/addProduct'}>
-              <button style={{ padding: 10, color: 'chocolate' }}>CREATE A NEW PRODUCT</button>
-            </Link>
-            <h1>products:</h1>
+
             <div className='flex wrap'>
               {products?.map((product) => (
                 <div key={product._id} className="product-item">

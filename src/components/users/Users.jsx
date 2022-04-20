@@ -36,15 +36,15 @@ const Users = () => {
 
   return (
     <div>
+      <h1>users:</h1>
       {loading ? <Loader /> : error ? <Error message={error} />
         : (
           <>
-            <h1>users:</h1>
             <div className='flex column'>
               {users?.map((user) => (
                 <UserItemStyled key={user._id}>
                   <img src={`https://avatars.dicebear.com/api/bottts/${user._id}.svg`}
-                   alt="" />
+                    alt="" />
                   <h3>{user.name}</h3>
                   <p>{user.isAdmin ? 'Admin' : 'User'}</p>
                   <a href={`mailto:${user.email}`}>{user.email}</a>

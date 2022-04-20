@@ -4,8 +4,8 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 import { userListReducer, userLoginReducer } from './reducers/userReducers';
 import { productCreateReducer, productDeleteReducer,
-         productEditReducer,
-         productListReducer,  
+         productEditReducer, productListReducer,
+         productUpdateReducer,  
 } from './reducers/productReducers';
 
 
@@ -16,6 +16,7 @@ const reducer = combineReducers({
     productDelete: productDeleteReducer,
     productCreate: productCreateReducer,
     productEdit: productEditReducer,
+    productUpdate: productUpdateReducer,
     
 });
 
