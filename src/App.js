@@ -11,6 +11,7 @@ import AppSidebar from "./components/app-sidebar/AppSidebar";
 import ProtectedRoute from "./ProtectedRoute";
 import CategoriesPage from "./pages/categories-page/CategoriesPage";
 import AddProduct from "./pages/add-product-page/AddProduct";
+import EditProductPage from "./pages/edit-product-page/EditProductPage";
 
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
             <Route path="/products" element={<Products/>} />
             <Route path="/users" element={<Users/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/addProduct" element={<AddProduct/>} />
+            <Route path="/addProduct" element={<AddProduct form='create'/>} />
+            <Route path="/product/:id/edit" element={<AddProduct form='edit'/>} />
           </Route>
         </Routes>
         </div>

@@ -33,8 +33,8 @@ const Products = () => {
       {loading ? <Loader /> : error ? <Error message={error} />
         : (
           <>
-            <Link  to={'/addProduct'}>
-              <button style={{padding: 10, color: 'chocolate'}}>CREATE A NEW PRODUCT</button>
+            <Link to={'/addProduct'}>
+              <button style={{ padding: 10, color: 'chocolate' }}>CREATE A NEW PRODUCT</button>
             </Link>
             <h1>products:</h1>
             <div className='flex wrap'>
@@ -45,7 +45,9 @@ const Products = () => {
                   <br />
                   ${product.price}
                   <div>
-                    <button>🖋</button>
+                    <Link to={`/product/${product._id}/edit`}>
+                      <button>🖋</button>
+                    </Link>
                     <button onClick={() => handleDelete(product._id)}>❌</button>
                   </div>
                 </div>
