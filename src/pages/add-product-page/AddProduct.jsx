@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const AddProduct = () => {
   return (
-    <div>AddProduct</div>
+    <div>
+      <Link to={'/products'}>
+        <button style={{ padding: 10, color: 'chocolate' }}>
+          back to products
+          </button>
+      </Link>
+    </div>
   )
 }
 

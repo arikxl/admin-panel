@@ -10,6 +10,7 @@ import AppHeader from "./components/app-header/AppHeader";
 import AppSidebar from "./components/app-sidebar/AppSidebar";
 import ProtectedRoute from "./ProtectedRoute";
 import CategoriesPage from "./pages/categories-page/CategoriesPage";
+import AddProduct from "./pages/add-product-page/AddProduct";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/products" element={<Products/>} />
             <Route path="/users" element={<Users/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/addProduct" element={<AddProduct/>} />
           </Route>
         </Routes>
         </div>
