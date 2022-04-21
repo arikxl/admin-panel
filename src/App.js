@@ -16,6 +16,7 @@ import EditProductPage from "./pages/edit-product-page/EditProductPage";
 import { useEffect } from "react";
 import { listProducts } from "./redux/actions/productActions";
 import { listOrders } from "./redux/actions/orderActions";
+import OrderDetails from "./pages/edit-order-page/OrderDetails";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <Route path="/homepage" element={<HomePage />}/>
             <Route path="/categories" element={<CategoriesPage/>} />
             <Route path="/orders" element={<Orders/>} />
+            <Route path="/order/:id" element={<OrderDetails/>} />
             <Route path="/products" element={<Products/>} />
             <Route path="/users" element={<Users/>} />
             <Route path="/login" element={<Login/>} />

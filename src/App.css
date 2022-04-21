@@ -50,3 +50,7 @@ button{
   width: 50px;
   padding: 5px;
 }
+
+.order-item{
+  display: block;
+}
