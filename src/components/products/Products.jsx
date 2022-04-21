@@ -41,7 +41,7 @@ const Products = () => {
             <div className='flex wrap'>
               {products?.map((product) => (
                 <div key={product._id} className="product-item">
-                  <img src={product.img} alt="" />
+                  <img src={product.img} alt="" loading='lazy'/>
                   {product.title}
                   <br />
                   ${product.price}
